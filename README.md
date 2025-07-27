@@ -4,6 +4,7 @@ Ever wondered how secret messages work? This project is your first step into the
 Message Encoder and Decoder is a fun and interactive tool that transforms your normal text into secret codes — and then brings it back to readable form.
 <br>
 ✨ What It Does:
+
 🔸 Encodes plain text into a hidden message
 
 🔸 Decodes the message back into the original text
