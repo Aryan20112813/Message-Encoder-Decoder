@@ -12,22 +12,22 @@ int stringlen(char *str1)
     }
     return count;
 }
-void encrypt(char *message)
+void encrypt(char *message, int len)
 {
     while (*message != '\0')
     {
-        for (int i = 0; i < Max_Size; i++)
+        for (int i = 0; i < len; i++)
         {
             *message = *message + i;
         }
         message++;
     }
 }
-void decrypt(char *message)
+void decrypt(char *message, int len)
 {
     while (*message != '\0')
     {
-        for (int i = 0; i < Max_Size; i++)
+        for (int i = 0; i < len; i++)
         {
             *message = *message - i;
         }
@@ -44,15 +44,16 @@ int main()
     fflush(stdin);
     cout << "Enter your message : " << endl;
     gets(text);
+    int len = stringlen(text);
     switch (choice)
     {
     case 1:
-        encrypt(text);
+        encrypt(text,len);
         cout<<"Message is encrypting....."<<endl;
         cout<<"The encrypted message is "<<text<<endl;
         break;
     case 2:
-        decrypt(text);
+        decrypt(text,len);
         cout<<"Message is decrypting...."<<endl;
         cout<<"The decrypted message is "<<text<<endl;
         break;
