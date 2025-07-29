@@ -12,7 +12,7 @@ int stringlen(char *str1)
     }
     return count;
 }
-void encrypt(char *message, int len)
+void encrypt(char *message)
 {
     while (*message != '\0')
     {
@@ -23,7 +23,7 @@ void encrypt(char *message, int len)
         message++;
     }
 }
-void decrypt(char *message, int len)
+void decrypt(char *message)
 {
     while (*message != '\0')
     {
@@ -37,24 +37,22 @@ void decrypt(char *message, int len)
 int main()
 {
     char text[Max_Size];
-    int choice, len;
+    int choice;
     cout << "***OPTIONS***\n1] To Encrypt the Message.\n2] To Decrypt the Message." << endl;
     cout << "Enter your choice : ";
     cin >> choice;
     fflush(stdin);
     cout << "Enter your message : " << endl;
     gets(text);
-    len = stringlen(text);
-    cout << len;
     switch (choice)
     {
     case 1:
-        encrypt(text, len);
+        encrypt(text);
         cout<<"Message is encrypting....."<<endl;
         cout<<"The encrypted message is "<<text<<endl;
         break;
     case 2:
-        decrypt(text, len);
+        decrypt(text);
         cout<<"Message is decrypting...."<<endl;
         cout<<"The decrypted message is "<<text<<endl;
         break;
@@ -62,7 +60,5 @@ int main()
         cout << "Enter a valid choice!!" << endl;
         break;
     }
-    // gets(text);
-    // puts(text);
     return 0;
 }
